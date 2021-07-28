@@ -1,7 +1,7 @@
 """A madlib game that compliments its users."""
 
 from logging import debug
-from random import choice
+import random
 
 from flask import Flask, render_template, request
 
@@ -20,7 +20,7 @@ AWESOMENESS = [
 def start_here():
     """Display homepage."""
 
-    return "Hi! This is the home page."
+    return render_template("hello.html")
 
 
 @app.route('/hello')
@@ -36,7 +36,7 @@ def greet_person():
 
     player = request.args.get("person")
 
-    compliment = choice(AWESOMENESS)
+    compliment = random.sample(AWESOMENESS, 3)
 
     return render_template("compliment.html",
                            person=player,

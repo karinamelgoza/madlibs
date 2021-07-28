@@ -1,21 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game</title>
-</head>
+{% block title %}The Game {% endblock %}
 
-<body>
-    <form action="madlib" method="POST">
-        Enter a person:<input type="text" name="person"> <br>
-        Enter a color:<input type="text" name="color"> <br>
-        Enter a noun:<input type="text" name="noun"> <br>
-        Enter an adjective:<input type="text" name="adjective">
-        <input type="submit">
-    </form>
-</body>
+{% block content%}
+<form action="madlib" method="POST">
+    <label for="person">Enter a person:</label>
+    <input type="text" name="person" id="person"> <br>
+    <label for="pickcolor">Pick a color:</label>
+    <div id="pickcolor">
+        <input type="radio" name="color" id="periwinkle" value="periwinkle">
+        <label for="periwinkle">periwinkle</label> <br>
+        <input type="radio" name="color" id="pink" value="pink">
+        <label for="pink">pink</label> <br>
+        <input type="radio" name="color" id="salmon" value="salmon">
+        <label for="salmon">salmon</label><br>
+        <input type="radio" name="color" id="blue" value="blue">
+        <label for="blue">blue</label><br>
+        <input type="radio" name="color" id="orange" value="orange">
+        <label for="orange">orange</label><br>
+        <input type="radio" name="color" id="green" value="green">
+        <label for="green">green</label>
+    </div>
+    <label for="noun">Enter a noun:</label>
+    <input type="text" name="noun" id="noun"> <br>
+    <label for="adjective">Pick an adjective:</label>
+    <select name="adjective" id="adjective">
+        <option value="icy">icy</option>
+        <option value="beautiful">beautiful</option>
+        <option value="angry">angry</option>
+        <option value="fancy">fancy</option>
+        <option value="jolly">jolly</option>
+        <option value="flaky">flaky</option>
+        <option value="magnificent">magnificent</option>
+    </select><br>
 
-</html>
+    <input type="submit">
+</form>
+{% endblock %}

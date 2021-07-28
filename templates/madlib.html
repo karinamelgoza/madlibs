@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madlib</title>
-</head>
+{% block title %}
+Madlib
+{% endblock %}
 
-<body>
-    <p>
-        There once was a {{ color }} {{ noun }} sitting in the Computer Lab.
-        When {{ person }} went to pick it up, it burst into flames in a totally
-        {{ adjective }} way.
-    </p>
-</body>
-
-</html>
+{% block content %}
+<p>
+    There once was a {{ color }} {{ noun }} sitting in the Computer Lab.
+    When {{ person }} went to pick it up, it burst into flames in a totally
+    {{ adjective }} way.
+</p>
+{% endblock %}
