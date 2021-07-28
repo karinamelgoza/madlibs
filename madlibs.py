@@ -15,6 +15,8 @@ AWESOMENESS = [
     'smashing', 'lovely',
 ]
 
+colors = ['blue', 'red', 'periwinkle', 'salmon', 'yellow', 'magenta']
+
 
 @app.route('/')
 def start_here():
@@ -46,9 +48,10 @@ def greet_person():
 @app.route('/game')
 def show_madlib_form():
     player_choice = request.args.get('yesorno')
+    choices = random.sample(AWESOMENESS, 6)
     if player_choice == 'no':
         return render_template('goodbye.html')
-    return render_template('game.html')
+    return render_template('game.html', choices=choices, colors=colors)
 
 
 @app.route('/madlib', methods=['GET', 'POST'])

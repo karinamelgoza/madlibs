@@ -8,30 +8,18 @@
     <input type="text" name="person" id="person"> <br>
     <label for="pickcolor">Pick a color:</label>
     <div id="pickcolor">
-        <input type="radio" name="color" id="periwinkle" value="periwinkle">
-        <label for="periwinkle">periwinkle</label> <br>
-        <input type="radio" name="color" id="pink" value="pink">
-        <label for="pink">pink</label> <br>
-        <input type="radio" name="color" id="salmon" value="salmon">
-        <label for="salmon">salmon</label><br>
-        <input type="radio" name="color" id="blue" value="blue">
-        <label for="blue">blue</label><br>
-        <input type="radio" name="color" id="orange" value="orange">
-        <label for="orange">orange</label><br>
-        <input type="radio" name="color" id="green" value="green">
-        <label for="green">green</label>
+        {% for i in colors %}
+        <input type="radio" name="color" id="{{i}}" value="{{i}}">
+        <label for="{{i}}">{{i}}</label> <br>
+        {% endfor %}
     </div>
     <label for="noun">Enter a noun:</label>
     <input type="text" name="noun" id="noun"> <br>
     <label for="adjective">Pick an adjective:</label>
     <select name="adjective" id="adjective">
-        <option value="icy">icy</option>
-        <option value="beautiful">beautiful</option>
-        <option value="angry">angry</option>
-        <option value="fancy">fancy</option>
-        <option value="jolly">jolly</option>
-        <option value="flaky">flaky</option>
-        <option value="magnificent">magnificent</option>
+        {% for i in choices %}
+        <option value='{{i}}'>{{i}}</option>
+        {% endfor %}
     </select><br>
 
     <input type="submit">
